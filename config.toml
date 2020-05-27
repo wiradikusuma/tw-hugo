@@ -19,6 +19,3 @@ title = "tw-hugo"
 [permalinks]
   blog = "/:filename/"
   page = "/:filename/"
-
-[taxonomies]
-  tag = "tags"
