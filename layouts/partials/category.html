@@ -1,0 +1,6 @@
+<section>
+	{{ range first 1 .Params.categories }}
+	{{ $href := print ("/categories/") (urlize .) }}
+	<a href="{{ $href }}">{{ . }}</a>
+	{{ end }}
+</section>

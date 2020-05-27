@@ -12,14 +12,9 @@
 	<ul>
 		{{ range first 3 (after 1 $featured) }}
 		<li>
-			{{ with .Params.categories }}
-			{{ range first 1 . }}
-			{{ $href := print ("/categories/") (urlize .) }}
-			<a href="{{ $href }}">{{ . }}</a>
-			{{ end }}
-			{{ end }}
+			{{ partial "category.html" . }}
 			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-			<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+			{{ partial "date.html" . }}
 			<p>{{ .Summary }}</p>
 		</li>
 		{{ end }}
