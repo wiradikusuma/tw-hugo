@@ -1,38 +1,84 @@
 {{ define "main" }}
-<main>
+<main class="container">
 	{{ $blog := where .Site.RegularPages "Section" "blog" }}
 	{{ $featured := where $blog ".Params.featured" "==" true }}
-	<section>
+	<section class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
 		{{ range first 1 $featured }}
-		<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-		<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-		<p>{{ .Summary }}</p>
+		<div class="col-md-6 px-0">
+			<h1 class="display-4 font-italic">{{ .Title }}</h1>
+			<p class="lead my-3">{{ .Summary }}</p>
+			<p class="lead mb-0">
+				<a href="{{ .RelPermalink }}" class="text-white font-weight-bold">Continue reading</a>
+			</p>
+		</div>
 		{{ end }}
 	</section>
-	<ul>
+	<ul class="row mb-2 list-unstyled">
 		{{ range first 3 (after 1 $featured) }}
-		<li>
-			{{ partial "category.html" . }}
-			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-			{{ partial "date.html" . }}
-			<p>{{ .Summary }}</p>
+		<li class="col-md-6">
+			<div
+				class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<div class="col p-4 d-flex flex-column position-static">
+					<strong class="d-inline-block mb-2 text-primary">
+						{{ partial "category.html" . }}
+					</strong>
+					<h3 class="mb-0">{{ .Title }}</h3>
+					<div class="mb-1 text-muted">
+						{{ partial "date.html" . }}
+					</div>
+					<p class="card-text mb-auto">{{ .Summary }}</p>
+					<a href="{{ .RelPermalink }}" class="stretched-link">Continue reading</a>
+				</div>
+				<div class="col-auto d-none d-lg-block">
+					<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+						 preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+						 aria-label="Placeholder: Thumbnail"><title>Placeholder</title>
+						<rect width="100%" height="100%" fill="#55595c"/>
+						<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+					</svg>
+				</div>
+			</div>
 		</li>
 		{{ end }}
 	</ul>
-	{{ $remainders := where $blog ".Params.featured" "!=" true }}
-	<ul>
-		{{ range first 5 $remainders }}
-		<li>
-			{{ partial "category.html" . }}
-			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-			{{ partial "date.html" . }}
-			<p>{{ .Content | truncate 250 }}</p>
-			<a href="{{ .RelPermalink }}">Read more</a>
-		</li>
-		{{ end }}
-	</ul>
-	<a href="/blog/">Show all posts</a>
-	{{ partial "all-category.html" . }}
-	{{ partial "all-tag.html" . }}
+
+	<div class="row">
+		<div class="col-md-8 blog-main">
+			<h3 class="pb-4 mb-4 font-italic border-bottom">
+				From the Firehose
+			</h3>
+
+			{{ $remainders := where $blog ".Params.featured" "!=" true }}
+			<ul class="list-unstyled">
+				{{ range first 5 $remainders }}
+				<li class="blog-post">
+					{{ partial "category.html" . }}
+					<h2 class="blog-post-title">{{ .Title }}</h2>
+					<p class="blog-post-meta">{{ partial "date.html" . }}</p>
+					<p>{{ .Content | truncate 250 }}</p>
+					<a href="{{ .RelPermalink }}">Read more</a>
+				</li>
+				{{ end }}
+			</ul>
+
+			<nav class="blog-pagination">
+				<a class="btn btn-outline-primary" href="/blog/">Show all posts</a>
+			</nav>
+
+		</div>
+
+		<aside class="col-md-4 blog-sidebar">
+			<div class="p-4 mb-3 bg-light rounded">
+				<h4 class="font-italic">About</h4>
+				<p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus
+					sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+			</div>
+
+			{{ partial "all-category.html" . }}
+			{{ partial "all-tag.html" . }}
+		</aside>
+
+	</div>
+
 </main>
 {{ end }}

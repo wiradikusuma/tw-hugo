@@ -16,6 +16,9 @@ title = "tw-hugo"
     url = "/about/"
     weight = 3
 
+[params]
+  description = "This is the description for the website."
+
 [permalinks]
   blog = "/:filename/"
   page = "/:filename/"
