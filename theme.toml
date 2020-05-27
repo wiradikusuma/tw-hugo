@@ -1,0 +1,12 @@
+name = "tw-hugo"
+license = "MIT"
+licenselink = "https://github.com/wiradikusuma/tw-hugo/blob/master/LICENSE"
+description = "Clean Hugo theme based on Bootstrap 4.5."
+homepage = "https://github.com/wiradikusuma/tw-hugo"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Thomas Wiradikusuma"
+  homepage = "https://wiradikusuma.com"
