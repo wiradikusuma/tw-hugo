@@ -19,5 +19,20 @@
 		</li>
 		{{ end }}
 	</ul>
+	{{ $remainders := where $blog ".Params.featured" "!=" true }}
+	<ul>
+		{{ range first 5 $remainders }}
+		<li>
+			{{ partial "category.html" . }}
+			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+			{{ partial "date.html" . }}
+			<p>{{ .Content | truncate 250 }}</p>
+			<a href="{{ .RelPermalink }}">Read more</a>
+		</li>
+		{{ end }}
+	</ul>
+	<a href="/blog/">Show all posts</a>
+	{{ partial "all-category.html" . }}
+	{{ partial "all-tag.html" . }}
 </main>
 {{ end }}
