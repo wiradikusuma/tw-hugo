@@ -17,6 +17,7 @@ title = "tw-hugo"
     weight = 3
 
 [params]
+  author = "tw-hugo"
   description = "This is the description for the website."
 
 [permalinks]

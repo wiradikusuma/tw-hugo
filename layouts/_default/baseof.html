@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="{{ .Site.Params.Author }}">
 	<meta name="description" content="{{ .Site.Params.Description }}">
 
 	<link rel="stylesheet" href="/css/bootstrap-4.5.0.min.css">
@@ -37,7 +38,7 @@
 {{ partial "scripts.html" . }}
 
 <footer class="blog-footer">
-	<p>© {{ now.Format "2006" }}</p>
+	<p>© {{ now.Format "2006" }} {{ .Site.Params.Author }}</p>
 </footer>
 </body>
 </html>
