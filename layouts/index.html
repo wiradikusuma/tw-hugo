@@ -1,3 +1,28 @@
 {{ define "main" }}
-index.html
+<main>
+	{{ $blog := where .Site.RegularPages "Section" "blog" }}
+	{{ $featured := where $blog ".Params.featured" "==" true }}
+	<section>
+		{{ range first 1 $featured }}
+		<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+		<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+		<p>{{ .Summary }}</p>
+		{{ end }}
+	</section>
+	<ul>
+		{{ range first 3 (after 1 $featured) }}
+		<li>
+			{{ with .Params.categories }}
+			{{ range first 1 . }}
+			{{ $href := print ("/categories/") (urlize .) }}
+			<a href="{{ $href }}">{{ . }}</a>
+			{{ end }}
+			{{ end }}
+			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+			<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+			<p>{{ .Summary }}</p>
+		</li>
+		{{ end }}
+	</ul>
+</main>
 {{ end }}
