@@ -1,0 +1,15 @@
+tmp.*
+.DS_Store
+rebel.xml
+.gradle/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+public/
+resources/_gen/
+build/
+out/
+appengine-generated/
+*.pyc

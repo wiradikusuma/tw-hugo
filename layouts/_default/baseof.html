@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/css/bootstrap-4.5.0.min.css">
+
+	{{ $title := print .Title " – " .Site.Title }}
+	{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+	<title>{{ $title }}</title>
+</head>
+<body>
+
+{{ partial "nav.html" . }}
+{{ block "main" . }}{{ end }}
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
+

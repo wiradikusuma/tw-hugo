@@ -1,0 +1,24 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "tw-hugo"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[permalinks]
+  blog = "/:filename/"
+  page = "/:filename/"
+
+[taxonomies]
+  tag = "tags"
