@@ -11,7 +11,7 @@
 		<li>
 			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
 			<time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-			<p>{{ .Render "summary" }}</p>
+			<p>{{ .Summary }}</p>
 		</li>
 		{{ end }}
 	</ul>
