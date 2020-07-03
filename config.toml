@@ -19,6 +19,7 @@ title = "tw-hugo"
 [params]
   author = "tw-hugo"
   description = "This is the description for the website."
+  domainName = "tw-hugo"
 
 [permalinks]
   blog = "/:filename/"

@@ -33,6 +33,10 @@
 </head>
 <body>
 
+<div class="alert alert-success m-3" role="alert">
+	Domain name {{ .Site.Params.DomainName }} might be for sale. Contact t@punyanama.com for details.
+</div>
+
 {{ partial "nav.html" . }}
 {{ block "main" . }}{{ end }}
 {{ partial "scripts.html" . }}
