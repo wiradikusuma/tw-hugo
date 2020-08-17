@@ -1,6 +1,0 @@
-<section>
-	{{ range .Params.tags }}
-	{{ $href := print ("/tags/") (urlize .) }}
-	<a class="btn btn-sm btn-secondary tag-btn" href="{{ $href }}">{{ . }}</a>
-	{{ end }}
-</section>
