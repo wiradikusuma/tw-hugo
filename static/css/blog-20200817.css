@@ -92,16 +92,14 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Blog posts
  */
-.blog-post {
-	margin-bottom: 4rem;
+
+ul > li.blog-post:not(:first-child) {
+	padding-top: 0.5rem;
 }
-.blog-post-title {
-	margin-bottom: .25rem;
-	font-size: 2.5rem;
-}
-.blog-post-meta {
-	margin-bottom: 1.25rem;
-	color: #999;
+
+ul > li.blog-post:not(:last-child) {
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 1.5rem;
 }
 
 /*

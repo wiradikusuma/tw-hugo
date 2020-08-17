@@ -17,16 +17,14 @@
 		{{ range first 3 (after 1 $featured) }}
 		<li class="col-md-6">
 			<div
-				class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				class="row no-gutters border rounded overflow-hidden flex-md-row mb-3 shadow-sm h-md-250 position-relative">
 				<div class="col p-4 d-flex flex-column position-static">
 					<strong class="d-inline-block mb-2 text-primary">
 						{{ partial "category.html" . }}
 					</strong>
 					<h3 class="mb-0">{{ .Title }}</h3>
-					<div class="mb-1 text-muted">
-						{{ partial "date.html" . }}
-					</div>
-					<p class="card-text mb-auto">{{ .Summary }}</p>
+					<div class="mb-1 text-muted">{{ partial "date.html" . }}</div>
+					<p class="card-text">{{ .Summary }}</p>
 					<a href="{{ .RelPermalink }}" class="stretched-link">Continue reading</a>
 				</div>
 				<div class="col-auto d-none d-lg-block">
@@ -44,19 +42,15 @@
 
 	<div class="row">
 		<div class="col-md-8 blog-main">
-			<h3 class="pb-4 mb-4 font-italic border-bottom">
-				From the Firehose
-			</h3>
-
 			{{ $remainders := where $blog ".Params.featured" "!=" true }}
 			<ul class="list-unstyled">
 				{{ range first 5 $remainders }}
 				<li class="blog-post">
 					{{ partial "category.html" . }}
-					<h2 class="blog-post-title">{{ .Title }}</h2>
-					<p class="blog-post-meta">{{ partial "date.html" . }}</p>
-					<p>{{ .Content | truncate 250 }}</p>
-					<a href="{{ .RelPermalink }}">Read more</a>
+					<h3 class="mb-0">{{ .Title }}</h3>
+					<div class="mb-1 text-muted">{{ partial "date.html" . }}</div>
+					<p class="card-text">{{ .Content | truncate 250 }}</p>
+					<a href="{{ .RelPermalink }}">Continue reading</a>
 				</li>
 				{{ end }}
 			</ul>
