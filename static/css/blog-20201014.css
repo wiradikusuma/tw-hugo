@@ -2,11 +2,20 @@
 /* stylelint-disable selector-list-comma-newline-after */
 
 /* To achieve retina, ensure image is 800px e.g. https://res.cloudinary.com/demo/image/upload/w_800,h_800,c_limit/sample.jpg */
-img {
-	max-width: 400px;
-	max-height: 400px;
+article img, .blog-post img {
+	max-width: 300px;
+	max-height: 300px;
 	width: auto;
 	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	article img, .blog-post img {
+		max-width: 400px;
+		max-height: 400px;
+	}
 }
 
 .blog-header {
