@@ -1,6 +1,14 @@
 /* https://getbootstrap.com/docs/4.5/examples/blog/blog.css */
 /* stylelint-disable selector-list-comma-newline-after */
 
+/* To achieve retina, ensure image is 800px e.g. https://res.cloudinary.com/demo/image/upload/w_800,h_800,c_limit/sample.jpg */
+img {
+	max-width: 400px;
+	max-height: 400px;
+	width: auto;
+	height: auto;
+}
+
 .blog-header {
 	line-height: 1.2;
 	border-bottom: 1px solid #e5e5e5;
