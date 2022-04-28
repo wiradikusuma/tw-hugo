@@ -1,6 +1,6 @@
 <form method="post" action="{{ .Site.Params.SendFoxUrl }}" class="sendfox-form" id="{{ .Site.Params.SendFoxId }}" data-async="true"
       data-recaptcha="true">
-    <div class="newsletter-box form-row mb-4 justify-content-center">
+    <div class="newsletter-box form-row mb-5 justify-content-center">
         <div class="col-12 text-center">
             <p class="mb-2">Be the first to know when new articles are published!</p>
         </div>
@@ -22,6 +22,8 @@
                 <input type="email" class="form-control" id="newsletter_email" name="email" required>
             </div>
         </div>
+        <!-- Center button in its own line on smaller widths -->
+        <div class="w-100 d-block d-md-none"></div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-2">Keep Me Updated!</button>
         </div>

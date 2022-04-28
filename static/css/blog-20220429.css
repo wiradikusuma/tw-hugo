@@ -3,7 +3,7 @@
 
 body {
 	font-family: 'Quattrocento Sans', sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 2em;
 }
 
@@ -36,7 +36,8 @@ article img, .blog-post img {
 
 .blog-header-logo {
 	font-family: 'Quattrocento Sans', sans-serif;
-	font-size: 2.25rem;
+	font-size: 24px;
+	font-weight: bold;
 }
 
 .blog-header-logo:hover {
@@ -44,6 +45,7 @@ article img, .blog-post img {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: #000;
 	font-family: 'Quattrocento Sans', sans-serif;
 }
 
@@ -82,6 +84,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: .875rem;
 }
 
+.nav a {
+	color: inherit;
+	font-weight: bold;
+}
+
 .nav-justify {
 	-ms-flex-pack: center !important;
 	justify-content: center !important;
@@ -104,9 +111,9 @@ h1, h2, h3, h4, h5, h6 {
 	flex: 0 0 auto;
 }
 
-.h-250 { height: 250px; }
+.h-250 { height: 260px; }
 @media (min-width: 768px) {
-	.h-md-250 { height: 250px; }
+	.h-md-250 { height: 260px; }
 }
 
 /* Pagination */
@@ -131,14 +138,58 @@ h1, h2, h3, h4, h5, h6 {
 
 .newsletter-box .input-group-text {
 	font-size: 14px;
-	line-height: 1.6;
+	line-height: 24px;
 	overflow: hidden;
 	width: 100%;
 }
 
 .newsletter-box button {
 	font-size: 14px;
-	line-height: 1.6;
+	line-height: 24px;
+}
+
+/*
+ * Featured
+ */
+
+.featured h3 {
+	font-size: 1.5rem;
+}
+
+.featured a {
+	color: inherit;
+}
+
+.featured a:hover {
+	text-decoration: none;
+}
+
+.featured div.img-wrapper {
+	background-position: center;
+	background-size: cover;
+	height: 240px;
+}
+
+@media (min-width: 992px) {
+	.featured div.img-wrapper {
+		height: 0;
+		min-height: 100%;
+		position: absolute;
+		right: 0;
+		width: 40%;
+	}
+}
+
+.jumbotron div.img-wrapper {
+	height: 320px;
+}
+
+.jumbotron h1 {
+	color: #ffffff;
+}
+
+.jumbotron p {
+	color: rgba(255, 255, 255, 0.80);
 }
 
 /*

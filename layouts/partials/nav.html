@@ -10,7 +10,7 @@
 	<div class="nav-scroller py-1">
 		<nav class="nav d-flex nav-justify">
 			{{ range .Site.Menus.main }}
-			<a class="p-2 text-muted" href="{{ .URL }}">{{ .Name | safeHTML }}</a>
+			<a class="p-2" href="{{ .URL }}">{{ .Name | safeHTML }}</a>
 			{{ end }}
 		</nav>
 	</div>
