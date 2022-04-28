@@ -1,0 +1,30 @@
+<form method="post" action="{{ .Site.Params.SendFoxUrl }}" class="sendfox-form" id="{{ .Site.Params.SendFoxId }}" data-async="true"
+      data-recaptcha="true">
+    <div class="newsletter-box form-row mb-4 justify-content-center">
+        <div class="col-12 text-center">
+            <p class="mb-2">Be the first to know when new articles are published!</p>
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" for="newsletter_first_name">Name</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Name</div>
+                </div>
+                <input type="text" class="form-control" id="newsletter_first_name" name="first_name" required>
+            </div>
+        </div>
+        <div class="col-auto">
+            <label class="sr-only" for="newsletter_email">Email</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Email</div>
+                </div>
+                <input type="email" class="form-control" id="newsletter_email" name="email" required>
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Keep Me Updated!</button>
+        </div>
+    </div>
+</form>
+<script src="https://sendfox.com/js/form.js"></script>

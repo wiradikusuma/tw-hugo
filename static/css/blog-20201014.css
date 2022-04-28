@@ -1,6 +1,17 @@
 /* https://getbootstrap.com/docs/4.5/examples/blog/blog.css */
 /* stylelint-disable selector-list-comma-newline-after */
 
+body {
+	font-family: 'Quattrocento Sans', sans-serif;
+	font-size: 14px;
+	line-height: 2em;
+}
+
+p, li {
+	color: rgb(90, 90, 90);
+	font-family: 'Merriweather', serif;
+}
+
 /* To achieve retina, ensure image is 800px e.g. https://res.cloudinary.com/demo/image/upload/w_800,h_800,c_limit/sample.jpg */
 article img, .blog-post img {
 	max-width: 300px;
@@ -24,7 +35,7 @@ article img, .blog-post img {
 }
 
 .blog-header-logo {
-	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-family: 'Quattrocento Sans', sans-serif;
 	font-size: 2.25rem;
 }
 
@@ -33,7 +44,7 @@ article img, .blog-post img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .display-4 {
@@ -104,6 +115,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 .blog-pagination > .btn {
 	border-radius: 2rem;
+}
+
+/*
+ * Newsletter
+ */
+
+.newsletter-box {
+	font-size: 14px;
+}
+
+.newsletter-box .input-group-prepend {
+	width: 60px;
+}
+
+.newsletter-box .input-group-text {
+	font-size: 14px;
+	line-height: 1.6;
+	overflow: hidden;
+	width: 100%;
+}
+
+.newsletter-box button {
+	font-size: 14px;
+	line-height: 1.6;
 }
 
 /*
