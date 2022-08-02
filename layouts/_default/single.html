@@ -1,6 +1,7 @@
 {{ define "main" }}
-<main class="container" style="max-width: 692px;">
-	<article class="py-3">
+<main class="container">
+	<img class="d-block mx-auto" src="{{ .Params.cover }}" style="max-width: 772px;">
+	<article class="py-3 mx-auto" style="max-width: 692px;">
 		<header class="mb-4">
 			<h1>{{ .Title }}</h1>
 			{{ partial "date-tags.html" . }}
