@@ -235,3 +235,8 @@ ul > li.blog-post:not(:last-child) {
 	border-radius: 1rem;
 	line-height: 1;
 }
+
+.footnotes {
+	font-size: 0.8em;
+	color: rgb(61, 61, 61);
+}
