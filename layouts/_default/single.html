@@ -1,11 +1,11 @@
 {{ define "main" }}
-<img class="d-block mx-auto blog-hero" src="{{ .Params.cover }}">
 <main class="container">
-	<article class="py-3 mx-auto blog-content">
-		<header class="mb-4">
-			<h1>{{ .Title }}</h1>
-			{{ partial "date-tags.html" . }}
-		</header>
+	<header class="mx-auto blog-content">
+		<h1>{{ .Title }}</h1>
+		<small style="color: #808080">{{ partial "date-tags.html" . }}</small>
+	</header>
+	<img class="d-block my-3 blog-hero" src="{{ .Params.cover }}">
+	<article class="mx-auto blog-content">
 		{{ .Content }}
 	</article>
 </main>
